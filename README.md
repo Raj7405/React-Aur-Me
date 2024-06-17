@@ -157,3 +157,32 @@ function component does not have option to manipulate lifecycle events of a comp
 - useMemo should be used only to memoize the value returned from a function, not the function itself this is main difference btw useMemo & useCallback
   
 - https://refine.dev/blog/react-memo-guide/#expensive-utilities
+  
+  
+7. useRef() :-
+
+- You can use it to persist or preserve values between re-renders. 
+- The useRef hook takes an initial value of any type as argument and returns an object with a single current property. 
+- const ref = useRef(initialValue);
+- [Note :
+        * The value of the ref object remains the same between re-renders
+        * Updating the value of the ref object doesn’t trigger a re-render
+	]
+-  if you remove the DOM node from the screen, React will set the value of the current property back to null.
+
+8. useImperativeHandle():
+-  useImperativeHandle(ref, createHandle, dependencies?)
+- This hook is use to communicate from a child component to a parent component in a more explicit way. 
+- This hook allows a child component to expose certain functions or properties to its parent component, giving the parent component more control over the child component. 
+        * A ref created by React.createRef() or useRef().
+        * A function that returns an object. This object contains the values or functions you want to expose.
+        * An optional dependency array that re-applies the imperative handle only when the dependencies change.
+
+    - https://dev.to/danielbellmas/real-life-example-useimperativehandle-34k
+  
+useRef() V/S useImperativeHandle():
+- you would use useRef if you only need to access the state of the child component, and you would use useImperativeHandle if you need to interact with the child component in a more direct way.   
+
+How forwardRef Works
+- Without forwardRef, a ref passed to a custom component would point to the component instance itself, rather than to a specific element within that component. By wrapping the child component in forwardRef, the ref is forwarded to the internal element or component specified, making it accessible to the parent component.
+
