@@ -146,12 +146,12 @@ function component does not have option to manipulate lifecycle events of a comp
 - Memoization :- Memoization lets us bypass the function's costly computations when the function is called with the same parameters repeatedly.
 - Caching function values is done using useMemo() hook. And callback functions are memoized with the useCallback() hook.
 
--** React.memo()** is a Higher Order Component (HOC) that memoizes the passed in component along with the value of its prop
+-React.memo() is a Higher Order Component (HOC) that memoizes the passed in component along with the value of its prop
 - It produced a new component that re-renders only when its props and internal state is changed.
 - So, typically we should use React.memo when we want to prevent re-renderings due to state changes that do not concern our component and only allow re-renderings due to prop changes that happen often or are driven by an event.
 - We Can add custom dependencies in React.memo(component,  dependency_Logic)
 
-- **useMemo() **hook is a function that caches the value produced from an expensive function used inside a React component.
+- useMemo() hook is a function that caches the value produced from an expensive function used inside a React component.
 - In React, data processing, transformation and manipulation utilities like sorting functions, filters and mappers are commonly used costly functions.
 -  it is important that we leverage useMemo when the execution of the utility function depends on relevant state changes. 
 - useMemo should be used only to memoize the value returned from a function, not the function itself this is main difference btw useMemo & useCallback
