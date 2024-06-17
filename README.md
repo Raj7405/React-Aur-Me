@@ -179,6 +179,7 @@ function component does not have option to manipulate lifecycle events of a comp
         * An optional dependency array that re-applies the imperative handle only when the dependencies change.
 
     - https://dev.to/danielbellmas/real-life-example-useimperativehandle-34k
+
   
 useRef() V/S useImperativeHandle():
 - you would use useRef if you only need to access the state of the child component, and you would use useImperativeHandle if you need to interact with the child component in a more direct way.   
