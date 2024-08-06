@@ -105,6 +105,7 @@ function component does not have option to manipulate lifecycle events of a comp
 - A setup function with setup code that connects to that system.
     * It should return a cleanup function with cleanup code that disconnects from that system.
 - Dependency is a list of values that the effect depends on. When any of these dependencies change, the effect is re-run. If the array is omitted or is empty, the effect will run on every render. 
+            
              - Run on every render: No dependencies array provided.
 	     -	Run only once on mount and cleanup on unmount: Empty dependencies array.
 	     - Run when specific dependencies change: Non-empty dependencies array.
